@@ -38,11 +38,11 @@ class GmailAPI:
         }
 
     def get_emails(self, days_ago):
-        """Gets and prints the content of emails from the past specified days in the Gmail inbox using the Gmail API."""
+        """Gets and prints the content of primary emails from the past specified days in the Gmail inbox using the Gmail API."""
         today = datetime.now()
         target_date = today - timedelta(days=days_ago)
         formatted_date = target_date.strftime('%Y-%m-%d')
-        query = f'is:inbox after:{formatted_date}'
+        query = f'category:primary is:inbox after:{formatted_date}'
 
         results = self.service.users().messages().list(userId='me', q=query).execute()
         messages = results.get('messages', [])
@@ -55,7 +55,9 @@ class GmailAPI:
 
         return email_data_list
 
-    # gmail_api = GmailAPI()
-    # email_data_list = gmail_api.get_emails(2)
-    # for email_data in email_data_list:
-    #     print(email_data)
+# gmail_api = GmailAPI()
+# email_data_list = gmail_api.get_emails(1)
+
+# for email_data in email_data_list:
+#     print(email_data)
+# print(len(email_data_list))

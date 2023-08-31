@@ -1,6 +1,7 @@
 from langchain.text_splitter import CharacterTextSplitter
 from gmail_fetch import GmailAPI
 import re
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 class TextProcessor:
     def __init__(self):
@@ -30,20 +31,17 @@ class TextProcessor:
             'Body': preprocessed_body,
             'Labels': email_data['Labels']
         }
-        return processed_email_data
+        values = list(processed_email_data.values())
+        return values
 
-    def get_text_chunks_from_email_data(self, processed_email_data):
-        text_chunks = self.text_splitter.split_text(processed_email_data['Body'])
-        return text_chunks
 
-    # text_processor = TextProcessor()
-    # gmail_api = GmailAPI()
-    # email_data_list = gmail_api.get_emails(2)
-    
-
-    # for email_data in email_data_list:
-    #     processed_email_data = text_processor.preprocess_email_data(email_data)
-    #     text_chunks = text_processor.get_text_chunks_from_email_data(processed_email_data)
-        
-    #     for chunk in text_chunks:
-    #         print(chunk)
+# text_processor = TextProcessor()
+# gmail_api = GmailAPI()
+# email_data_list = gmail_api.get_emails(1)
+# data = []
+# for email_data in email_data_list:
+#     processed_email_data = text_processor.preprocess_email_data(email_data)
+#     data.append(processed_email_data)
+# print(data)
+# print(len(data))
+# print(type(data[0]))
