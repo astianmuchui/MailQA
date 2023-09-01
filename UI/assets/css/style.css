@@ -87,7 +87,7 @@ html {
   grid-gap: 5px;
 }
 
-.flex-column, body main .grid-2 .text, body .showcase .grid-2 .text, body main .prompt-container, body main .form-container, .x-end, .x-start, body main .prompt-container .response-container .query, .y-end, .y-start, body main, body .showcase, body main .prompt-container .form-container, body main .prompt-container .response-container {
+.flex-column, body main .grid-2 .text, body .showcase .grid-2 .text, body main .prompt-container, body main .form-container, .x-end, .x-start, body main .prompt-container .response-container .response, body main .prompt-container .response-container .query, body main .prompt-container .response-container, .y-end, .y-start, body main, body .showcase, body main .prompt-container .form-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -107,7 +107,7 @@ html {
   justify-content: flex-end;
 }
 
-.x-start, body main .grid-2 .text, body .showcase .grid-2 .text, body main .prompt-container .response-container .query {
+.x-start, body main .grid-2 .text, body .showcase .grid-2 .text, body main .prompt-container .response-container .response, body main .prompt-container .response-container .query, body main .prompt-container .response-container {
   align-items: flex-start;
 }
 
