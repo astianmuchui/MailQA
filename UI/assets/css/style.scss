@@ -1,0 +1,141 @@
+@import 'root';
+
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    header
+    {
+        @extend .shadowed;
+        height: 65px;
+        width: 100%;
+        z-index: 99;
+        position: sticky;
+        top: 0;
+        box-sizing: border-box;
+        padding-top: 15px;
+        padding-left: 2%;
+        display: inline-flex;
+        background-color: $white;
+    
+        p
+        {
+            font-size: 20px;
+            background: linear-gradient(45deg, #149ddd, #176c8e);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        nav
+        {
+            padding: 0;
+            margin-left: 70%;
+
+            ul
+            {
+                display: inline-flex;
+                justify-content: space-between;
+                margin-top: 5px;
+
+                li
+                {
+                    margin: 0 20px;
+
+                    a
+                    {
+                        font-size: 14px;
+                        color: lighten($primary-color, 30);
+
+                        &:hover
+                        {
+                            color: lighten($primary-color, 10);
+                            transition: all 1s ease-out;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    main
+    {
+        justify-content: center !important;
+
+        img
+        {
+            opacity: 0;
+            position: relative;
+            animation: fadeIn 1s ease-in forwards 1;
+        }
+
+        .form-container
+        {
+            width: 40%;
+            height: 80%;
+            @extend .flex-column;
+            border-radius: 10px;
+        }
+    }
+
+    main, .showcase
+    {
+        width: 100%;
+        height: 85vh;
+        @extend .y-start;
+
+        .grid-2
+        {
+            width: 90%;
+            height: 85%;
+            box-sizing: border-box;
+            padding: 1%;
+
+
+            .text
+            {
+                height: 90%;
+                width: 90%;
+                border: inherit;
+                @extend .flex-column, .x-start;
+                box-sizing: border-box;
+                padding: 0 1%;
+                position: relative;
+                opacity: 0;
+                animation: fadeIn 1s ease-in forwards 1;
+                animation-delay: 0.5s;
+
+                h1
+                {
+                    margin-bottom: 20px;
+                    text-transform: capitalize;
+                    font-size: 30px;
+                }
+
+                *
+                {
+                    text-transform: none;
+                }
+
+                a
+                {
+                    font-size: 15px;
+                }
+
+                p
+                {
+                    width: 90%;
+                    margin-bottom: 30px;
+                    font-size: 14px;
+                    line-height: 2rem;
+                    margin-left: 1%;
+                }
+
+            }
+        }
+    }
+}
