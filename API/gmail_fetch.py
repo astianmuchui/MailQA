@@ -1,7 +1,12 @@
+import base64
 from auth import authenticate
 from googleapiclient.discovery import build
-from base64 import urlsafe_b64decode
 from datetime import datetime, timedelta
+
+def parse_msg(msg):
+    if msg.get("payload").get("body").get("data"):
+        return base64.urlsafe_b64decode(msg.get("payload").get("body").get("data").encode("ASCII")).decode("utf-8")
+    return msg.get("snippet")
 
 class GmailAPI:
     def __init__(self):
@@ -11,40 +16,31 @@ class GmailAPI:
     def get_email_content(self, message_id):
         """Gets the content of a specific email using the Gmail API."""
         message = self.service.users().messages().get(userId='me', id=message_id, format='full').execute()
-        payload = message['payload']
-        headers = payload['headers']
+        decoded_body = parse_msg(message)
 
-        headers_dict = {header['name']: header['value'] for header in headers}
-
-        subject = headers_dict.get('Subject', 'No Subject')
-        from_header = headers_dict.get('From', 'Unknown Sender')
-        date_header = headers_dict.get('Date', 'Unknown Date')
-
-        body_data = ""
-        if 'body' in payload and 'data' in payload['body']:
-            body_data = payload['body']['data']
-            body = urlsafe_b64decode(body_data).decode('utf-8')
-        else:
-            body = "No content"
-
-        label_ids = message.get('labelIds', [])
-
+        # Extract subject, from, and date from email headers
+        headers = message['payload']['headers']
+        # labels = [header['value'] for header in headers if header['name'] == 'Label']
+        subject = next((header['value'] for header in headers if header['name'] == 'Subject'), 'No Subject')
+        from_header = next((header['value'] for header in headers if header['name'] == 'From'), 'Unknown Sender')
+        date_header = next((header['value'] for header in headers if header['name'] == 'Date'), 'Unknown Date')
+        # label_ids = message.get('labelIds', [])
         return {
             'From': from_header,
             'Date': date_header,
             'Subject': subject,
-            'Body': body,
-            'Labels': label_ids
+            'Body': decoded_body
+            # 'Labels': label_ids,
         }
 
     def get_emails(self, days_ago):
-        """Gets and prints the content of primary emails from the past specified days in the Gmail inbox using the Gmail API."""
+        """Gets and returns the content of primary emails from the past specified days in the Gmail inbox using the Gmail API."""
         today = datetime.now()
         target_date = today - timedelta(days=days_ago)
         formatted_date = target_date.strftime('%Y-%m-%d')
         query = f'category:primary is:inbox after:{formatted_date}'
 
-        results = self.service.users().messages().list(userId='me', q=query).execute()
+        results = self.service.users().messages().list(userId='me', maxResults=20, q=query).execute()
         messages = results.get('messages', [])
 
         email_data_list = []
@@ -57,7 +53,16 @@ class GmailAPI:
 
 # gmail_api = GmailAPI()
 # email_data_list = gmail_api.get_emails(1)
+# email_content_list = [(email['From'], email['Date'], email['Subject'], email['Body']) for email in email_data_list]
 
-# for email_data in email_data_list:
-#     print(email_data)
-# print(len(email_data_list))
+# emails=[]
+# for email_content in email_content_list:
+#     print("From:", email_content[0])
+#     print("Date:", email_content[1])
+#     print("Subject:", email_content[2])
+#     print("Body:", email_content[3])
+#     print()
+#     emails.append(email_content)
+
+# print(emails)
+# print(len(emails))

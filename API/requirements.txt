@@ -9,3 +9,6 @@ pinecone-client
 tiktoken
 pandas
 faiss-cpu
+beautifulsoup4
+fastapi
+uvicorn
