@@ -21,7 +21,7 @@ $green: rgb(5, 194, 106);
     outline: none;
     resize: none;
     text-transform: capitalize;
-    
+
 }
 
 html
@@ -77,6 +77,15 @@ html
     align-items: flex-end;
 }
 
+// scrollbar
+::-webkit-scrollbar
+{
+    width: 3px;
+}
+::-webkit-scrollbar-thumb
+{
+    background: linear-gradient(45deg, #149ddd, #176c8e);
+}
 .btn-primary
 {
     background-color: lighten($primary-color, 10);
