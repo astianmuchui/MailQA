@@ -135,8 +135,10 @@ body
                     p
                     {
                         font-size: 12px;
-                        margin: 0;
+                        margin-left: 1%;
                         text-transform: none;
+                        max-width: 95%;
+                        max-height: max-content;
                     }
 
                     *
