@@ -588,6 +588,10 @@ body main .form-container {
   height: 80%;
   border-radius: 10px;
 }
+body main .form-container h2 {
+  position: relative;
+  top: -20%;
+}
 body main, body .showcase {
   width: 100%;
   height: 85vh;

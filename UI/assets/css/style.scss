@@ -79,6 +79,13 @@ body
             height: 80%;
             @extend .flex-column;
             border-radius: 10px;
+
+            h2
+            {
+                position: relative;
+                top: -20%;
+            }
+
         }
     }
 
