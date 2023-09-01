@@ -1,4 +1,4 @@
-# Hackathon-Application
+# MailWise
 ![diagram-export-9_1_2023, 8_25_55 AM](https://github.com/KevKibe/Hackathon-Application/assets/86055894/60d79103-3602-45e0-ba5b-56d0fdcb5332)
 ## User Journey
 - The user logs in to the app using their Google account.
