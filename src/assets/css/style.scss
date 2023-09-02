@@ -1,0 +1,275 @@
+@import 'root';
+
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    header
+    {
+        @extend .shadowed;
+        height: 65px;
+        width: 100%;
+        z-index: 99;
+        position: sticky;
+        top: 0;
+        box-sizing: border-box;
+        padding-top: 15px;
+        padding-left: 2%;
+        display: inline-flex;
+        background-color: $white;
+        p
+        {
+        
+            font-size: 20px;
+            background: linear-gradient(45deg, #149ddd, #176c8e);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 500;
+            letter-spacing: 1px;
+            width: max-content;
+        }
+
+        nav
+        {
+            padding: 0;
+            margin-left: 70%;
+
+            ul
+            {
+                display: inline-flex;
+                justify-content: space-between;
+                margin-top: 5px;
+
+                li
+                {
+                    margin: 0 20px;
+
+                    a
+                    {
+                        font-size: 14px;
+                        color: lighten($primary-color, 30);
+
+                        &:hover
+                        {
+                            color: lighten($primary-color, 10);
+                            transition: all 1s ease-out;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    main
+    {
+        justify-content: center !important;
+        height: 85vh;
+        img
+        {
+            opacity: 0;
+            position: relative;
+            animation: fadeIn 1s ease-in forwards 1;
+        }
+
+        .form-container
+        {
+            width: 40%;
+            height: 80%;
+            @extend .flex-column;
+            border-radius: 10px;
+
+            h2
+            {
+                position: relative;
+                top: -20%;
+                font-weight: 300;
+            }
+
+        }
+
+        .prompt-container
+        {
+            position: relative;
+            top: 4%;
+            width: 80%;
+            height: 100%;
+            @extend .flex-column;
+            border-radius: 10px;
+            // background-color: darken($white, 1);
+            box-sizing: border-box;
+            padding: 2%;
+
+
+
+            h2
+            {
+                font-weight: 400;
+                margin-bottom: 10px;
+            }
+
+            .response-container
+            {
+                width: 95%;
+                height: 90%;
+                margin-bottom: 10px;
+                border-radius: inherit;
+                @extend .y-start, .x-start;
+                overflow-y: auto;
+                box-sizing: border-box;
+                padding: 2%;
+
+                .query
+                {
+                    background-color: darken($white, 2.5);
+                    min-height: 7vh;
+                    max-height: max-content;
+                    width: 100%;
+                    @extend .x-start;
+                    box-sizing: border-box;
+                    padding: 1%;
+                    border-radius: 5px;
+
+                    p
+                    {
+                        font-size: 12px;
+                        margin-left: 1%;
+                        text-transform: none;
+                        max-width: 95%;
+                        max-height: max-content;
+                    }
+
+                    *
+                    {
+                        padding: 0;
+                    }
+                }
+
+                .response
+                {
+
+                    font-size: 12px;
+                    margin-left: 2%;
+                    margin-top: 1%;
+                    line-height: 1.7rem;
+                    letter-spacing: 0.2px;
+                    word-spacing: 5px;
+                    margin-bottom: 1%;
+                    font-weight: 500;
+                    @extend .x-start;
+                }
+            }
+
+            .form-container
+            {
+                width: 95%;
+                height: 10%;
+                background-color: darken($white, 1);
+                @extend .y-start;
+                margin-left: 5%;
+                
+                form
+                {
+                    display: inline-flex;
+                    width: 100%;
+                    height: 95%;
+
+                    input
+                    {
+                        width: 90%;
+                        height: 100%;
+                        border: none;
+                        border-radius: 50px;
+                        background-color: darken($white, 7);
+                        box-sizing: border-box;
+                        padding: 0 2%;
+                        text-transform: none;
+                    
+                        &::placeholder
+                        {
+                            font-size: 13px;
+                        }
+                    }
+
+                    button
+                    {
+                        margin-left: -11%;
+                        margin-top: 0.5%;
+                        width: 10%;
+                        height: 80%;
+                        border: none;
+                        border-radius: 50px;
+                        background-color: $primary-color;
+                        color: $white;
+                        font-size: 14px;
+                        box-sizing: border-box;
+                        cursor: pointer;
+                        padding: 2px;
+                        
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    main, .showcase
+    {
+        width: 100%;
+        height: 85vh;
+        @extend .y-start;
+
+        .grid-2
+        {
+            width: 85%;
+            height: 85%;
+            box-sizing: border-box;
+            padding: 1%;
+
+
+            .text
+            {
+                height: 90%;
+                width: 90%;
+                border: inherit;
+                @extend .flex-column, .x-start;
+                box-sizing: border-box;
+                padding: 0 1%;
+                position: relative;
+                opacity: 0;
+                animation: fadeIn 1s ease-in forwards 1;
+                animation-delay: 0.5s;
+
+                h1
+                {
+                    margin-bottom: 20px;
+                    text-transform: capitalize;
+                    font-size: 30px;
+                }
+
+                *
+                {
+                    text-transform: none;
+                }
+
+                a
+                {
+                    font-size: 15px;
+                }
+
+                p
+                {
+                    width: 90%;
+                    margin-bottom: 30px;
+                    font-size: 14px;
+                    line-height: 2rem;
+                    margin-left: 1%;
+                }
+
+            }
+        }
+    }
+}
