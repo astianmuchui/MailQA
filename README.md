@@ -16,4 +16,10 @@
 - run ```python -m venv venv``` in terminal
 - run ```venv/Scripts/activate``` in the terminal
 - run ```pip install -r requirements.txt``` in the terminal
+- create .env file and write this
+  ```
+  OPENAI_API_KEY=" api-key"
+  ```
+  I'll provide the api-key on whatsapp
+- add these to the .gitignore file ```venv```,   ```.env```
 - run```uvicorn api:app --host 127.0.0.1 --port 8000 --reload``` in the terminal
