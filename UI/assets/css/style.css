@@ -124,7 +124,7 @@ html {
 }
 
 .btn-primary {
-  background-color: #0b77a9;
+  background-color: #08597e;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -138,12 +138,12 @@ html {
 }
 .btn-primary:hover {
   transition: all 0.3s ease-in-out;
-  background-color: #0a6691;
+  background-color: #074866;
 }
 
 .btn-secondary {
   background-color: #daa520;
-  border: 2px solid #085579;
+  border: 2px solid #05374e;
   color: #111111;
   border: none;
   padding: 10px 20px;
@@ -233,8 +233,8 @@ html {
 
 .btn-transparent-primary {
   background-color: transparent;
-  color: #085579;
-  border: 2px solid #085579;
+  color: #05374e;
+  border: 2px solid #05374e;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -245,7 +245,7 @@ html {
   margin-left: 5px;
 }
 .btn-transparent-primary:hover {
-  background-color: #085579;
+  background-color: #05374e;
   color: #fff;
 }
 
@@ -408,7 +408,7 @@ html {
 .dot-primary {
   height: 30px;
   width: 50px;
-  background-color: #085579;
+  background-color: #05374e;
   border-radius: 50%;
 }
 
@@ -451,7 +451,7 @@ html {
 }
 
 .txt-primary {
-  color: #0b77a9;
+  color: #08597e;
 }
 
 .txt-secondary {
@@ -557,7 +557,7 @@ body header {
 }
 body header p {
   font-size: 20px;
-  background: linear-gradient(45deg, #149ddd, #176c8e);
+  background: linear-gradient(45deg, #0974a6, #09749f);
   -webkit-background-clip: text;
   color: transparent;
   font-weight: 500;
@@ -578,10 +578,10 @@ body header nav ul li {
 }
 body header nav ul li a {
   font-size: 14px;
-  color: #29b1f1;
+  color: #0e9cde;
 }
 body header nav ul li a:hover {
-  color: #0b77a9;
+  color: #08597e;
   transition: all 1s ease-out;
 }
 body main {
@@ -685,7 +685,7 @@ body main .prompt-container .form-container form button {
   height: 80%;
   border: none;
   border-radius: 50px;
-  background-color: #085579;
+  background-color: #05374e;
   color: #fff;
   font-size: 14px;
   box-sizing: border-box;
