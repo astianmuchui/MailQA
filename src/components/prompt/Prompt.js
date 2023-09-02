@@ -7,8 +7,8 @@ function Prompt() {
   const [response, setResponse] = useState(null);
  const[query,setQuery]=useState();
  const handleSubmit = async (values) => {
-  values.userToken = localStorage.getItem('accessToken');
-  
+  //values.userToken = localStorage.getItem('accessToken');
+
   try {
     const response = await axios.post('http://localhost:8000/chat', values);
     setResponse(response.data.response);
