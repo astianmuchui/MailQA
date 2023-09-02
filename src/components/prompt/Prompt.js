@@ -36,6 +36,15 @@ function Prompt() {
             <p className="txt-grey txt-type" data-wait="100000" data-words={'["No response"]'}></p>
     
             } 
+
+        {response && (
+          <div className="response-container">
+            <div className="response">
+            <p className="txt-grey txt-type" data-wait="100000" data-words={response}></p>
+            </div>
+            <TypeWriterComponent />
+          </div>
+        )}
             </div>
         </div>
         <div className="form-container">
@@ -46,15 +55,7 @@ function Prompt() {
             </Form>
           </Formik>
         </div>
-        {response && (
-          <div className="response-container">
-            <div className="response">
-              <p className="txt-grey">{response}</p>
-            </div>
-          </div>
-        )}
       </div>
-      <TypeWriterComponent />
     </main>
   );
 }
