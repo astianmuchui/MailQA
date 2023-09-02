@@ -15,7 +15,7 @@ function App() {
     function start() {
       gapi.client.init({
         clientId:'965274681666-p08jm4et6g955b9fmm0jeirg410qcug4.apps.googleusercontent.com',
-        scope: 'email',
+        scope: '',
       });
     }
 
