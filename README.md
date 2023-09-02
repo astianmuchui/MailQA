@@ -12,8 +12,8 @@
 - The chatbot displays the response to the user.
 
 ## Instructions to activate API
-```cd API``` in the terminal
-run ```python -m venv venv``` in terminal
-run ```venv/Scripts/activate``` in the terminal
-run ```pip install -r requirements.txt``` in the terminal
-run```uvicorn api:app --host 127.0.0.1 --port 8000 --reload``` in the terminal
+- ```cd API``` in the terminal
+- run ```python -m venv venv``` in terminal
+- run ```venv/Scripts/activate``` in the terminal
+- run ```pip install -r requirements.txt``` in the terminal
+- run```uvicorn api:app --host 127.0.0.1 --port 8000 --reload``` in the terminal
