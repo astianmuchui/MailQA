@@ -6,21 +6,28 @@ import TypeWriterComponent from '../../assets/js/type';
 function Prompt() {
   const [response, setResponse] = useState(null);
  const[query,setQuery]=useState();
-  const handleSubmit = async (values) => {
-    try {
-      const response = await axios.post('http://localhost:8000/chat', values); // Change the URL to your API endpoint
-      setResponse(response.data);
-      setQuery(values.query);
-      console.log(response.data); // Display the response in the console
+ const handleSubmit = async (values) => {
+  values.userToken = localStorage.getItem('accessToken');
+  
+  try {
+    const response = await axios.post('http://localhost:8000/chat', values);
+    setResponse(response.data.response);
+    setQuery(values.userInput);
 
-      // Update the data-words attribute with the response
-      const responseElement = document.querySelector('.txt-grey.txt-type');
-      responseElement.setAttribute('data-words', JSON.stringify([response.data]));
-    } catch (error) {
-      console.error(error);
+    // Update the data-words attribute with the response
+    const responseElement = document.querySelector('.txt-grey.txt-type');
+    if (responseElement) {
+      responseElement.setAttribute('data-words', JSON.stringify([response.data.response]));
     }
-  };
 
+    console.log(response.data.response); // Display the response in the console
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+
+console.log("The following is userToken",localStorage.getItem('accessToken'))
   return (
     <main>
       <div className="prompt-container">
@@ -31,7 +38,7 @@ function Prompt() {
           </div>
           <div className="response"> 
             {query ?
-                <p className="txt-grey txt-type" data-wait="100000" data-words={'["Response available"]'}></p>
+                <p className="txt-grey txt-type" data-wait="100000" data-words={JSON.stringify([response])}></p>
             :
             <p className="txt-grey txt-type" data-wait="100000" data-words={'["No response"]'}></p>
     
@@ -48,9 +55,9 @@ function Prompt() {
             </div>
         </div>
         <div className="form-container">
-          <Formik initialValues={{ query: '' }} onSubmit={handleSubmit}> 
+          <Formik initialValues={{ userInput: ''}} onSubmit={handleSubmit}> 
             <Form>
-              <Field type="text" name="query" placeholder="Enter your query" />
+              <Field type="text" name="userInput" placeholder="Enter your query" />
               <button type="submit" className="btn-gradient">Submit</button>
             </Form>
           </Formik>

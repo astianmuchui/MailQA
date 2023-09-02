@@ -1,4 +1,5 @@
 import './assets/css/style.css';
+
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Landing from './components/Main/Landing';
@@ -7,8 +8,6 @@ import Signup from './signup/signup';
 import Prompt from './components/prompt/Prompt';
 import { useEffect } from 'react';
 import { gapi } from 'gapi-script';
-
-import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   useEffect(() => {
@@ -22,7 +21,7 @@ function App() {
     gapi.load('client:auth2', start);
   }, []);
   return (
-    <AuthProvider>
+    <>
       <Navbar /> 
       <BrowserRouter>
         <Routes>
@@ -33,7 +32,7 @@ function App() {
             <Route path="/*" element={<Landing />} />
           </Routes>
       </BrowserRouter>
-    </AuthProvider>
+    </>
   );
 }
 
