@@ -8,8 +8,6 @@ import Prompt from './components/prompt/Prompt';
 import { useEffect } from 'react';
 import { gapi } from 'gapi-script';
 
-import { AuthProvider } from './contexts/AuthContext';
-
 function App() {
   useEffect(() => {
     function start() {
@@ -22,7 +20,7 @@ function App() {
     gapi.load('client:auth2', start);
   }, []);
   return (
-    <AuthProvider>
+    <>
       <Navbar /> 
       <BrowserRouter>
         <Routes>
@@ -33,7 +31,7 @@ function App() {
             <Route path="/*" element={<Landing />} />
           </Routes>
       </BrowserRouter>
-    </AuthProvider>
+    </>
   );
 }
 
