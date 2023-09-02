@@ -1,0 +1,14 @@
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+google-api-python-client
+langchain
+python-dotenv
+openai
+pinecone-client
+tiktoken
+pandas
+faiss-cpu
+beautifulsoup4
+fastapi
+uvicorn
