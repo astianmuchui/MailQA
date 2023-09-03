@@ -39,7 +39,7 @@ def load_credentials():
 def run_authentication_flow():
     """Run the OAuth 2.0 authentication flow to get new credentials."""
     flow = InstalledAppFlow.from_client_secrets_file(
-        'credentials.json',
+        'API\credentials.json',
         scopes=SCOPES,
         redirect_uri='https://localhost:8080'
     )
