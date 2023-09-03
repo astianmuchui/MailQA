@@ -14,8 +14,4 @@ fastapi
 uvicorn
 streamlit
 streamlit-chat
-elevenlabs
 
-SpeechRecognition
-pyaudio
-playsound==1.2.2 
