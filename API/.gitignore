@@ -1,5 +1,4 @@
 .env
-credentials.json
 outlook_fetch.py
 venv
 az_auth.py
