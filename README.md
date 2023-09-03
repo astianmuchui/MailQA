@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Mail-QA
+Mail QA is a chat-based web application that is focused on addressing the issue of professionals spending a significant portion of their workday on email communication. 
+The proposed solution involves using generative AI to streamline email management and improve productivity.<br>
+This repository contains the source code and development history of the ATRONS platform.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Structure
+- ```/API``` includes the code for the API powering the chatbot.
+- ```/UI``` includes the frontend code.
+- ```/public, /scripts and /src``` include the backend code
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## How we are Solving the Problem
+The proposed solution involves using generative AI specifically OpenAI models to streamline email management
+and improve productivity. Here's a breakdown of the key components and tasks
+involved:
+- Understand the content of emails, including text extraction, language processing,
+and context comprehension.
+- Allow users to interact with the AI using natural language prompts and be
+capable of interpreting these prompts to perform actions like summarizing emails,
+searching for specific information, or generating responses..
+- Generate concise summaries of emails based on user requests for example
+extracting key points, identifying important information, and presenting it in a
+user-friendly format..
+- Understand the context of an email and generate appropriate and coherent
+responses quickly and appropriately.
+- Support 98 languages as currently supported by the OpenAI API ensuring that
+users from diverse linguistic backgrounds can benefit from the AI-powered email
+management and communication features.
+- Have an intuitive user interface that allows users to input prompts, view
+summaries, and access generated responses

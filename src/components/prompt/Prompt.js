@@ -7,6 +7,7 @@ function Prompt() {
   const [response, setResponse] = useState(null);
  const[query,setQuery]=useState();
  const handleSubmit = async (values) => {
+<<<<<<< HEAD
   //values.userToken = localStorage.getItem('accessToken');
 
   try {
@@ -14,6 +15,8 @@ function Prompt() {
     setResponse(response.data.response);
     setQuery(values.userInput);
 
+=======
+>>>>>>> refs/remotes/origin/main
     // Update the data-words attribute with the response
     const responseElement = document.querySelector('.txt-grey.txt-type');
     if (responseElement) {
