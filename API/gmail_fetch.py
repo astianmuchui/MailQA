@@ -25,13 +25,17 @@ class GmailAPI:
         from_header = next((header['value'] for header in headers if header['name'] == 'From'), 'Unknown Sender')
         date_header = next((header['value'] for header in headers if header['name'] == 'Date'), 'Unknown Date')
         # label_ids = message.get('labelIds', [])
-        return {
+        
+        # Create email data dictionary with empty strings for missing elements
+        email_data = {
             'From': from_header,
             'Date': date_header,
             'Subject': subject,
             'Body': decoded_body
             # 'Labels': label_ids,
         }
+        
+        return email_data
 
     def get_emails(self, days_ago):
         """Gets and returns the content of primary emails from the past specified days in the Gmail inbox using the Gmail API."""
@@ -47,12 +51,16 @@ class GmailAPI:
         for message in messages:
             message_id = message['id']
             email_data = self.get_email_content(message_id)
-            email_data_list.append(email_data)
+            email_data_list.append((email_data,))
+            # Each email data is now in its own tuple
 
         return email_data_list
 
+
+
 # gmail_api = GmailAPI()
 # email_data_list = gmail_api.get_emails(1)
+# print(email_data_list)
 # email_content_list = [(email['From'], email['Date'], email['Subject'], email['Body']) for email in email_data_list]
 
 # emails=[]

@@ -11,11 +11,16 @@ vectorstore = initialize_embeddings_and_vectorstore(data)
 conversation_chain = initialize_conversation_chain(vectorstore)
 
 class UserInput(BaseModel):
-    user_input: str
+    prompt: str
+
+@app.post("/auth/google/callback")
+async def callback():
+
+    pass
 
 @app.post("/chat/")
 async def run_conversation(input_data: UserInput):
-    user_input = input_data.text
+    user_input = input_data.prompt
     response = conversation_chain.run(user_input)
     return {"response": response}
 
