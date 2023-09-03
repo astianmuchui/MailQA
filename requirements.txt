@@ -12,3 +12,11 @@ faiss-cpu
 beautifulsoup4
 fastapi
 uvicorn
+streamlit
+streamlit-chat
+elevenlabs
+ffmpeg
+SpeechRecognition
+pyaudio
+playsound==1.2.2 
+streamlit-sharing
