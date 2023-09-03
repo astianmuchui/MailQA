@@ -8,15 +8,10 @@ app = FastAPI()
 
 data = preprocess_emails()
 vectorstore = initialize_embeddings_and_vectorstore(data)
-conversation_chain = initialize_conversation_chain(vectorstore)
+conversation_chain = initialize_conversation_chain(vectorstore,api_key)
 
 class UserInput(BaseModel):
     prompt: str
-
-@app.post("/auth/google/callback")
-async def callback():
-
-    pass
 
 @app.post("/chat/")
 async def run_conversation(input_data: UserInput):
