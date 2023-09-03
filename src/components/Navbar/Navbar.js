@@ -41,7 +41,7 @@ function Navbar() {
           {isLoggedIn ? null : <li><a href="/signup">Signup</a></li>} 
           {isLoggedIn ? null : <li><a href="/login">Login</a></li>}
           <li><a href="/prompt">Prompt</a></li>
-          <li><a href="/prompt">{userinfo ? userinfo.name : 'Loading..'}</a></li>
+          <li><a href="/prompt">{userinfo ? userinfo.name ? 'Online' : 'Offline' : 'Loading..'}</a></li>
         </ul>
       </nav>
     </header>
