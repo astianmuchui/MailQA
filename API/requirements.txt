@@ -19,4 +19,3 @@ ffmpeg
 SpeechRecognition
 pyaudio
 playsound==1.2.2 
-streamlit-sharing
