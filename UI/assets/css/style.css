@@ -116,16 +116,17 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(45deg, #149ddd, #176c8e);
+  border-radius: 10px;
 }
 
 .btn-primary {
-  background-color: #0b77a9;
-  color: #fff;
+  background-color: #08597e;
+  color: rgba(255, 255, 255, 0.9333333333);
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -138,12 +139,12 @@ html {
 }
 .btn-primary:hover {
   transition: all 0.3s ease-in-out;
-  background-color: #0a6691;
+  background-color: #074866;
 }
 
 .btn-secondary {
   background-color: #daa520;
-  border: 2px solid #085579;
+  border: 2px solid #05374e;
   color: #111111;
   border: none;
   padding: 10px 20px;
@@ -170,7 +171,7 @@ html {
 
 .btn-red {
   background-color: rgb(218, 64, 64);
-  color: #fff;
+  color: rgba(255, 255, 255, 0.9333333333);
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -187,7 +188,7 @@ html {
 
 .btn-green {
   background-color: rgb(5, 194, 106);
-  color: #fff;
+  color: rgba(255, 255, 255, 0.9333333333);
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -203,7 +204,7 @@ html {
 }
 
 .btn-white {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9333333333);
   color: #111111;
   border: none;
   padding: 10px 20px;
@@ -216,11 +217,11 @@ html {
   margin-left: 5px;
 }
 .btn-white:hover {
-  background-color: #e6e6e6;
+  background-color: rgba(230, 230, 230, 0.9333333333);
 }
 
-.shadowed, body header, .google-btn {
-  box-shadow: inset 1px 1px rgba(255, 255, 255, 0.044), inset -1px -1px rgba(255, 255, 255, 0), 1px 3px 24px -1px rgba(0, 0, 0, 0.15);
+.shadowed, .google-btn {
+  box-shadow: inset 1px 1px rgba(255, 255, 255, 0.478), inset -1px -1px rgba(255, 255, 255, 0.132), 1px 3px 24px -1px rgba(0, 0, 0, 0.27);
 }
 
 .btn-round {
@@ -233,8 +234,8 @@ html {
 
 .btn-transparent-primary {
   background-color: transparent;
-  color: #085579;
-  border: 2px solid #085579;
+  color: #05374e;
+  border: 2px solid #05374e;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -245,8 +246,8 @@ html {
   margin-left: 5px;
 }
 .btn-transparent-primary:hover {
-  background-color: #085579;
-  color: #fff;
+  background-color: #05374e;
+  color: rgba(255, 255, 255, 0.9333333333);
 }
 
 .btn-transparent-secondary {
@@ -264,7 +265,7 @@ html {
 }
 .btn-transparent-secondary:hover {
   background-color: #daa520;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.9333333333);
 }
 
 .btn-gradient {
@@ -287,8 +288,8 @@ html {
 
 .btn-transparent-white {
   background-color: transparent;
-  color: #fff;
-  border: 2px solid #fff;
+  color: rgba(255, 255, 255, 0.9333333333);
+  border: 2px solid rgba(255, 255, 255, 0.9333333333);
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -299,7 +300,7 @@ html {
   margin-left: 5px;
 }
 .btn-transparent-white:hover {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9333333333);
   color: #111111;
 }
 
@@ -408,7 +409,7 @@ html {
 .dot-primary {
   height: 30px;
   width: 50px;
-  background-color: #085579;
+  background-color: #05374e;
   border-radius: 50%;
 }
 
@@ -451,7 +452,7 @@ html {
 }
 
 .txt-primary {
-  color: #0b77a9;
+  color: #08597e;
 }
 
 .txt-secondary {
@@ -459,7 +460,7 @@ html {
 }
 
 .txt-white {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.9333333333);
 }
 
 .txt-black {
@@ -544,6 +545,7 @@ body {
   box-sizing: border-box;
 }
 body header {
+  box-shadow: inset 1px 1px rgba(255, 255, 255, 0.163), inset -1px -1px rgba(255, 255, 255, 0), 1px 3px 24px -1px rgba(0, 0, 0, 0.1);
   height: 65px;
   width: 100%;
   z-index: 99;
@@ -553,11 +555,12 @@ body header {
   padding-top: 15px;
   padding-left: 2%;
   display: inline-flex;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9333333333);
+  backdrop-filter: blur(10px);
 }
 body header p {
   font-size: 20px;
-  background: linear-gradient(45deg, #149ddd, #176c8e);
+  background: linear-gradient(45deg, #075275, #065d7f);
   -webkit-background-clip: text;
   color: transparent;
   font-weight: 500;
@@ -578,10 +581,10 @@ body header nav ul li {
 }
 body header nav ul li a {
   font-size: 14px;
-  color: #29b1f1;
+  color: #0e9cde;
 }
 body header nav ul li a:hover {
-  color: #0b77a9;
+  color: #08597e;
   transition: all 1s ease-out;
 }
 body main {
@@ -626,7 +629,7 @@ body main .prompt-container .response-container {
   padding: 2%;
 }
 body main .prompt-container .response-container .query {
-  background-color: #f9f9f9;
+  background-color: rgba(249, 249, 249, 0.9333333333);
   min-height: 7vh;
   max-height: max-content;
   width: 100%;
@@ -657,7 +660,7 @@ body main .prompt-container .response-container .response {
 body main .prompt-container .form-container {
   width: 95%;
   height: 10%;
-  background-color: #fcfcfc;
+  background-color: rgba(252, 252, 252, 0.9333333333);
   margin-left: 5%;
 }
 body main .prompt-container .form-container form {
@@ -670,7 +673,7 @@ body main .prompt-container .form-container form input {
   height: 100%;
   border: none;
   border-radius: 50px;
-  background-color: #ededed;
+  background-color: rgba(237, 237, 237, 0.9333333333);
   box-sizing: border-box;
   padding: 0 2%;
   text-transform: none;
@@ -685,8 +688,8 @@ body main .prompt-container .form-container form button {
   height: 80%;
   border: none;
   border-radius: 50px;
-  background-color: #085579;
-  color: #fff;
+  background-color: #05374e;
+  color: rgba(255, 255, 255, 0.9333333333);
   font-size: 14px;
   box-sizing: border-box;
   cursor: pointer;

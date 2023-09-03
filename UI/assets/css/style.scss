@@ -8,7 +8,7 @@ body
 
     header
     {
-        @extend .shadowed;
+        box-shadow: inset 1px 1px rgba(255, 255, 255, 0.163), inset -1px -1px rgba(255, 255, 255, 0), 1px 3px 24px -1px rgba(0, 0, 0, 0.1);
         height: 65px;
         width: 100%;
         z-index: 99;
@@ -19,11 +19,12 @@ body
         padding-left: 2%;
         display: inline-flex;
         background-color: $white;
+        backdrop-filter: blur(10px);
         p
         {
         
             font-size: 20px;
-            background: linear-gradient(45deg, #149ddd, #176c8e);
+            background: linear-gradient(45deg, #075275, #065d7f);
             -webkit-background-clip: text;
             color: transparent;
             font-weight: 500;
