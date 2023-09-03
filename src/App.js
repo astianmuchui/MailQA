@@ -1,4 +1,5 @@
 import './assets/css/style.css';
+
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Landing from './components/Main/Landing';

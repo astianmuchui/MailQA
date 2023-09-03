@@ -7,13 +7,6 @@ function Prompt() {
   const [response, setResponse] = useState(null);
  const[query,setQuery]=useState();
  const handleSubmit = async (values) => {
-  values.userToken = localStorage.getItem('accessToken');
-  
-  try {
-    const response = await axios.post('http://localhost:8000/chat', values);
-    setResponse(response.data.response);
-    setQuery(values.userInput);
-
     // Update the data-words attribute with the response
     const responseElement = document.querySelector('.txt-grey.txt-type');
     if (responseElement) {
