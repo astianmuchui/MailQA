@@ -15,7 +15,7 @@ uvicorn
 streamlit
 streamlit-chat
 elevenlabs
-ffmpeg
+
 SpeechRecognition
 pyaudio
 playsound==1.2.2 
