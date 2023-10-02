@@ -105,7 +105,7 @@ body
 
                     margin-left: 8%;
                     animation: slideIn 3s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-                    animation-delay: 1.0s;
+                    animation-delay: 2.9s;
                }
         }
 
@@ -132,7 +132,7 @@ body
         .prompt-container
         {
             width: 80%;
-            height: 80%;
+            height: 75%;
             background-color: transparent;
             border-radius: 10px;
             -webkit-box-shadow:0px 0px 40px 15px rgba(12, 83, 111, 0.7);
@@ -140,7 +140,7 @@ body
             box-shadow: 0px 0px 40px 15px rgba(8, 81, 111, 0.7);
             box-sizing: border-box;
             padding: 1%;
-
+            margin-bottom: 2%;
 
             .query
             {
@@ -183,7 +183,7 @@ body
                 background-color: darken($primary-color, 10);
                 border-radius: inherit;
                 width: 100%;
-                min-height: 80%;
+                min-height: 85%;
                 display: inline-flex;
                 margin-top: 1%;
                 overflow-y: auto;
@@ -212,7 +212,7 @@ body
                     margin-left: 2%;
                     opacity: 0;
                     animation: fadeIn 1s forwards ease-in;
-                    animation-delay: 2.5s;
+                    animation-delay: 5.2s;
                     word-spacing: 4px;
                     line-height: 2rem;
                     font-size: 15px;

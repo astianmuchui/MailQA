@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/aos.css">
         <title>MailQA</title>
 </head>
 <body>
@@ -34,7 +35,7 @@
 
         <section>
 
-                <div class="prompt-container">
+                <div class="prompt-container" data-aos="fade" data-aos-duration="1000" data-aos-delay="20" data-aos-easing="ease-in" >
                         <div class="query">
                                 <div class="u">U</div>
                                 <p class="txt-type txt-gradient" data-wait="1555500" data-words='["Please write me a summary of all emails with the keyword hackathon"]'></p>
@@ -42,12 +43,18 @@
 
                         <div class="response">
                                 <img src="./assets/img/iconlogo.png" alt="">
-                                <p class="txt-type txt-white" data-wait="1555500" data-words='["Here is a summary of all emails with the keyword hackathon. \n\nSubject: Amazing Hackathon: On 12 Nov\n\nSummary: The email highlights an upcoming hackathon scheduled for November 12th. It promises an exciting opportunity to showcase skills, collaborate, and solve real-world problems. The event emphasizes networking, prizes, and recognition. Recipients are encouraged to register, prepare, form teams, and get ready for a day of innovation. The sender expresses enthusiasm about the recipients potential contribution.\n\nAction Items:\n\n- Save the date: November 12th.\n- Register for the hackathon.\n- Prepare ideas and skills.\n- Consider forming or joining a team.\n\n"]'></p>
+                                <p class="txt-type txt-white" data-wait="155000" data-words='["Here is a summary of all emails with the keyword hackathon. \n\nSubject: Amazing Hackathon: On 12 Nov\n\nSummary: The email highlights an upcoming hackathon scheduled for November 12th. It promises an exciting opportunity to showcase skills, collaborate, and solve real-world problems. The event emphasizes networking, prizes, and recognition. Recipients are encouraged to register, prepare, form teams, and get ready for a day of innovation. The sender expresses enthusiasm about the recipients potential contribution.\n\nAction Items:\n\n- Save the date: November 12th.\n- Register for the hackathon.\n- Prepare ideas and skills.\n- Consider forming or joining a team.\n\n"]'></p>
 
                         </div>
                 </div>
 
+                <a href="#" class="btn-gradient">Try it yourself</a>
+
         </section>
         <script src="./assets/js/type.js"></script>
+        <script src="./assets/js/scroll_min.js"></script>
+        <script>
+                AOS.init();
+        </script>
 </body>
 </html>
