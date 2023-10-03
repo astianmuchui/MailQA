@@ -793,7 +793,7 @@ body .partners .partners-container img {
     top: -3px;
   }
   body main {
-    height: 80vh;
+    height: 60vh;
     width: 100%;
     display: flex;
     flex-direction: column;
