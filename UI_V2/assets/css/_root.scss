@@ -527,6 +527,15 @@ html
 
 /* Animations */
 
+@keyframes rotate
+{
+    100%
+    {
+        opacity: 1;
+        transform: rotate(3600deg);
+    }
+}
+
 @keyframes fadeIn
 {
     from

@@ -273,7 +273,8 @@ html
 
 .btn-gradient
 {
-    background: linear-gradient(45deg, #149ddd, #176c8e);
+    background: linear-gradient(45deg, #1497d3, #910b41);
+
     color: white;
     letter-spacing: 1px;
     border: none;
@@ -290,8 +291,8 @@ html
 
     &:hover
     {
-        background: linear-gradient(45deg, #176c8e, #149ddd);
-        
+        background: linear-gradient(-45deg, #0d6790, #fc4f91);
+
     }
 }
 
@@ -517,7 +518,7 @@ html
 
 .txt-gradient
 {
-    background: linear-gradient(45deg, #149ddd, #176c8e);
+    background: linear-gradient(60deg, #18b1f8, #a02d59);
     -webkit-background-clip: text;
     color: transparent;
     letter-spacing: 1px;
