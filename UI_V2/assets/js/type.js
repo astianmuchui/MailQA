@@ -30,11 +30,11 @@ TypeWriter.prototype.type = function() /* Type method */
   
       this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
 
-      let typeSpeed = 30; /** Reduce this to increase speed  */
+      typeSpeed = 80; /** Reduce this to increase speed  */
       
       if (this.isDeleting)
       {
-          typeSpeed /= 2;
+          typeSpeed /= 2.5;
       }
       
       if (!this.isDeleting && this.txt === fullTxt)
@@ -46,9 +46,10 @@ TypeWriter.prototype.type = function() /* Type method */
       {
           this.isDeleting = false;
           this.wordIndex++;
-          typeSpeed = 500;
+          typeSpeed = 50;
       }
 
+      
       setTimeout(() => this.type(), typeSpeed);
   }
 
@@ -56,8 +57,11 @@ TypeWriter.prototype.type = function() /* Type method */
 
   function init()
   {
-      const txtElement = document.querySelector('.txt-type');
-      const words = JSON.parse(txtElement.getAttribute('data-words'));
-      const wait = txtElement.getAttribute('data-wait');
-      new TypeWriter(txtElement, words, wait);
-  }
+    const txtElements = document.querySelectorAll('.txt-type');
+    txtElements.forEach(txtElement => {
+        const words = JSON.parse(txtElement.getAttribute('data-words'));
+        const wait = txtElement.getAttribute('data-wait');
+        new TypeWriter(txtElement, words, wait);
+    });
+
+}

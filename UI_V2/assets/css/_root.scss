@@ -1,7 +1,7 @@
-
+    
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
-$primary-color: #05374e;
+$primary-color: #02344b;
 $navy: #010818;
 $secondary-color: #daa520;
 $white: #ffffffee;
@@ -77,6 +77,10 @@ html
     align-items: flex-end;
 }
 
+.no-shadow
+{
+    box-shadow: none !important;
+}
 // scrollbar
 ::-webkit-scrollbar
 {
@@ -225,6 +229,7 @@ html
     }
 }
 
+
 .btn-transparent-primary
 {
     background-color: transparent;
@@ -273,7 +278,7 @@ html
 
 .btn-gradient
 {
-    background: linear-gradient(45deg, #1497d3, #910b41);
+    background: linear-gradient(45deg, #1497d3, #bf1056);
 
     color: white;
     letter-spacing: 1px;
@@ -518,7 +523,7 @@ html
 
 .txt-gradient
 {
-    background: linear-gradient(60deg, #18b1f8, #a02d59);
+    background: linear-gradient(60deg, #18b1f8, #e94383);
     -webkit-background-clip: text;
     color: transparent;
     letter-spacing: 1px;
@@ -526,6 +531,15 @@ html
 }
 
 /* Animations */
+
+@keyframes rotate
+{
+    100%
+    {
+        opacity: 1;
+        transform: rotate(3600deg);
+    }
+}
 
 @keyframes fadeIn
 {
