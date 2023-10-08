@@ -1,7 +1,7 @@
-
+    
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
-$primary-color: #05374e;
+$primary-color: #02344b;
 $navy: #010818;
 $secondary-color: #daa520;
 $white: #ffffffee;
@@ -77,6 +77,10 @@ html
     align-items: flex-end;
 }
 
+.no-shadow
+{
+    box-shadow: none !important;
+}
 // scrollbar
 ::-webkit-scrollbar
 {
@@ -224,6 +228,7 @@ html
         padding: 0;
     }
 }
+
 
 .btn-transparent-primary
 {
