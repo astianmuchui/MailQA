@@ -12,3 +12,6 @@ faiss-cpu
 beautifulsoup4
 fastapi
 uvicorn
+streamlit
+streamlit-chat
+

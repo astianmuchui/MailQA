@@ -18,21 +18,21 @@ class GmailAPI:
         message = self.service.users().messages().get(userId='me', id=message_id, format='full').execute()
         decoded_body = parse_msg(message)
 
-        # Extract subject, from, and date from email headers
         headers = message['payload']['headers']
-        # labels = [header['value'] for header in headers if header['name'] == 'Label']
         subject = next((header['value'] for header in headers if header['name'] == 'Subject'), 'No Subject')
         from_header = next((header['value'] for header in headers if header['name'] == 'From'), 'Unknown Sender')
         date_header = next((header['value'] for header in headers if header['name'] == 'Date'), 'Unknown Date')
-        # label_ids = message.get('labelIds', [])
-        
-        # Create email data dictionary with empty strings for missing elements
+        label_ids = message.get('labelIds', [])
+        label_names = []
+        for label_id in label_ids:
+            label = self.service.users().labels().get(userId='me', id=label_id).execute()
+            label_names.append(label['name'])
         email_data = {
             'From': from_header,
             'Date': date_header,
             'Subject': subject,
+            'Labels': label_names,
             'Body': decoded_body
-            # 'Labels': label_ids,
         }
         
         return email_data
@@ -44,7 +44,7 @@ class GmailAPI:
         formatted_date = target_date.strftime('%Y-%m-%d')
         query = f'category:primary is:inbox after:{formatted_date}'
 
-        results = self.service.users().messages().list(userId='me', maxResults=20, q=query).execute()
+        results = self.service.users().messages().list(userId='me', maxResults=10, q=query).execute()
         messages = results.get('messages', [])
 
         email_data_list = []
@@ -52,25 +52,9 @@ class GmailAPI:
             message_id = message['id']
             email_data = self.get_email_content(message_id)
             email_data_list.append((email_data,))
-            # Each email data is now in its own tuple
 
         return email_data_list
 
 
 
-# gmail_api = GmailAPI()
-# email_data_list = gmail_api.get_emails(1)
-# print(email_data_list)
-# email_content_list = [(email['From'], email['Date'], email['Subject'], email['Body']) for email in email_data_list]
 
-# emails=[]
-# for email_content in email_content_list:
-#     print("From:", email_content[0])
-#     print("Date:", email_content[1])
-#     print("Subject:", email_content[2])
-#     print("Body:", email_content[3])
-#     print()
-#     emails.append(email_content)
-
-# print(emails)
-# print(len(emails))

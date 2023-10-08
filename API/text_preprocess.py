@@ -26,44 +26,11 @@ class TextProcessor:
             'From': email['From'],
             'Date': email['Date'],
             'Subject': email['Subject'],
+            'Labels': email.get('Labels', []),  # Include the 'Labels' key in the processed data
             'Body': preprocessed_body,
-        # 'Labels': labels  # Include labels in processed data
         }
         return processed_email_data
 
 
 
 
-# text_processor = TextProcessor()
-# gmail_api = GmailAPI()
-# emails = gmail_api.get_emails(5)
-
-# processed_email_data_list = []
-
-# for email_data in emails:
-#     processed_email_data = text_processor.preprocess_email_data(email_data)
-#     processed_email_data_list.append(processed_email_data)
-
-# # Display the processed email data
-# for processed_email_data in processed_email_data_list:
-#     print(processed_email_data)
-
-
-
-
-# Rewrite the code so that each email is in its own tuple
-# email_list = []
-# for email_data in email_data_list:
-#     email = (email_data['From'], email_data['Date'], email_data['Subject'], email_data['Body'])
-#     email_list.append(email)
-
-# # Print the email list
-# print(email_list)
-
-# data = []
-# for email_data in email_content_list:
-#     processed_email_data = text_processor.preprocess_email_data(email_data)
-#     data.append(processed_email_data)
-# print(data)
-# print(len(data))
-# print(type(data[0]))
