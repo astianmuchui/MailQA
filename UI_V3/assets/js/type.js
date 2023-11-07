@@ -18,7 +18,7 @@ TypeWriter.prototype.type = function() /* Type method */
 
       const current = this.wordIndex % this.words.length;
       const fullTxt = this.words[current];
-  
+
       if (this.isDeleting)
       {
           this.txt = fullTxt.substring(0, this.txt.length - 1);
@@ -27,16 +27,16 @@ TypeWriter.prototype.type = function() /* Type method */
       {
           this.txt = fullTxt.substring(0, this.txt.length + 1);
       }
-  
+
       this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
 
       typeSpeed = 80; /** Reduce this to increase speed  */
-      
+
       if (this.isDeleting)
       {
           typeSpeed /= 2.5;
       }
-      
+
       if (!this.isDeleting && this.txt === fullTxt)
       {
           typeSpeed = this.wait;
@@ -49,7 +49,7 @@ TypeWriter.prototype.type = function() /* Type method */
           typeSpeed = 50;
       }
 
-      
+
       setTimeout(() => this.type(), typeSpeed);
   }
 

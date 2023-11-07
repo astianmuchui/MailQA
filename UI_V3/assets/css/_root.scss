@@ -278,7 +278,7 @@ html
 
 .btn-gradient
 {
-    background: linear-gradient(45deg, #1497d3, #bf1056);
+    background: linear-gradient(60deg, #1099d9, #d40256);
 
     color: white;
     letter-spacing: 1px;
@@ -296,7 +296,7 @@ html
 
     &:hover
     {
-        background: linear-gradient(-45deg, #0d6790, #fc4f91);
+        background: linear-gradient(-45deg, #0d6790, #d40256);
 
     }
 }
@@ -604,6 +604,30 @@ html
     {
         opacity: 1;
         transform: translateY(0px);
+    }
+}
+
+@keyframes wobble
+{
+    0%
+    {
+        transform: scale(0.2);
+    }
+    25%
+    {
+        transform: scale(1.2);
+    }
+    50%
+    {
+        transform: scale(0.8);
+    }
+    75%
+    {
+        transform: scale(1.1);
+    }
+    100%
+    {
+        transform: scale(1);
     }
 }
 
