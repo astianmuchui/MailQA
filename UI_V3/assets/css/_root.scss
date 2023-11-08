@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 $primary-color: #02344b;
-$navy: #010818;
-$secondary-color: #daa520;
+$navy: #00040e;
+$secondary-color: #18b1f8;
 $white: #ffffffee;
 $bg: #fcfeffd6;
 $black: #111111;
@@ -85,10 +85,11 @@ html
 ::-webkit-scrollbar
 {
     width: 5px;
+    background: #000;
 }
 ::-webkit-scrollbar-thumb
 {
-    background: linear-gradient(45deg, #149ddd, #176c8e);
+    background: linear-gradient(45deg, #1e2f36, #176c8e);
     border-radius: 10px;
 }
 .btn-primary
@@ -275,7 +276,33 @@ html
         color: $white;
     }
 }
+.btn-gradient-blue
+{
+    background: linear-gradient(-45deg, #021d2a, #5690ab);
 
+
+    color: white;
+    letter-spacing: 1px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 1s ease-in;
+
+    i
+    {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    &:hover
+    {
+        background: linear-gradient(-45deg,#5690ab, #021d2a);
+
+    }
+
+}
 .btn-gradient
 {
     background: linear-gradient(60deg, #1099d9, #d40256);
@@ -529,8 +556,46 @@ html
     letter-spacing: 1px;
 
 }
+.txt-gradient-light
+{
+    background: linear-gradient(60deg,#ffffff, #107aab);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+
+}
+
 
 /* Animations */
+
+@keyframes changebg
+{
+    0%
+    {
+        background: rgb(48,0,31);
+        background: radial-gradient(circle, rgba(48,0,31,1) 5%, rgba(0,0,0,1) 45%);
+    }
+    25%
+    {
+        background: rgb(48,0,31);
+        background: radial-gradient(circle, rgb(9, 25, 23) 5%, rgba(0,0,0,1) 45%); 
+    }
+    50%
+    {
+        background: rgb(48,0,31);
+        background: radial-gradient(circle, rgb(37, 15, 32) 5%, rgba(0,0,0,1) 45%);
+    }
+    75%
+    {
+        background: rgb(48,0,31);
+        background: radial-gradient(circle, rgb(0, 11, 41) 5%, rgba(0,0,0,1) 45%);
+    }
+    100%
+    {
+        background: rgb(48,0,31);
+        background: radial-gradient(circle, rgb(0, 11, 41) 5%, rgba(0,0,0,1) 45%);
+    }
+}
 
 @keyframes rotate
 {
