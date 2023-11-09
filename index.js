@@ -8,4 +8,4 @@ app.get('/auth/google/callback', (req, res) => {
   // and user information on your server.
 });
 
-app.listen(5500)
+app.listen(process.env.PORT | 3000)
